@@ -1,10 +1,9 @@
+from json import loads
+from os import getenv
+
 import base64
 import requests
 
-from json import loads
-
-USERNAME="medic"
-PASSWORD="password"
 
 def encode_credentials(username: str, password: str) -> str:
     credentials = bytes(f"{username}:{password}", "utf-8")
@@ -33,8 +32,8 @@ def parse(request):
 
 def credentialize(request):
     def inner(*args):
-        username = USERNAME
-        password = PASSWORD      
+        username = getenv("MEDIC_USERNAME")
+        password = getenv("MEDIC_PASSWORD")    
 
         credentials = encode_credentials(username, password)
         return request(*args, credentials=credentials)
@@ -43,8 +42,9 @@ def credentialize(request):
 
 @parse
 @credentialize
-def post(url: str, data: dict, **kwargs) -> dict:
+def post(data: dict, **kwargs) -> dict:
     credentials = kwargs['credentials']
+    url = getenv("MEDIC_URL")
 
     if not credentials:
         return None
