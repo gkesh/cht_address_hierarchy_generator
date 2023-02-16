@@ -54,14 +54,13 @@ def transform_locations(location: dict) -> dict:
                                                 "type": "c80_household",
                                                 "place_code": f"{item['code']}-{num.split(':')[0]}-{num.split(':')[1]}-{double_digit(i)}",
                                                 "hhID": f"{item['code']}-{num.split(':')[0]}-{num.split(':')[1]}-{double_digit(i)}",
-                                                "interview_date": "1977-01-01",
                                                 "child": [
                                                     {
                                                         "name": f"Empty",
                                                         "type": "c80_household_contact"
                                                     }
                                                 ]
-                                            } for i in range(1, 2)
+                                            } for i in range(1, 25)
                                         ]
                                     } for num in item["wards"]
                                 ]
