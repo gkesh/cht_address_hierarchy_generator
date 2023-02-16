@@ -1,23 +1,29 @@
 {
     "type": "c10_center",
     "name": "Kathmandu Valley",
-    "child": {
-        "type": "c20_province",
-        "name": "Bagmati",
-        "child_type": "c30_district",
-        "child": [
-            {
-                "name": "Kathmandu",
-                "child_type": "c40_municipality",
-                "child": [
-                    {
-                        "name": "Budanilkantha",
-                        "code": "K-BD",
-                        "wards": ["01", "09", "10"]
-                    }
-                ]
-            }
-        ]
-    }
+    "child_type": "c30_district",
+    "child": [
+        {
+            "name": "Kathmandu",
+            "child_type": "c40_municipality",
+            "child": [
+                {
+                    "name": "Budanilkantha",
+                    "code": "K-BU",
+                    "wards": ["07:C"]
+                },
+                {
+                    "name": "Dakshinkali",
+                    "code": "K-DA",
+                    "wards": ["01:C", "02:C"]
+                },
+                {
+                    "name": "Tokha",
+                    "code": "K-TO",
+                    "wards": ["09:T", "10:T"]
+                }
+            ]
+        }
+    ]
 }
   

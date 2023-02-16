@@ -7,6 +7,8 @@ import json
 import time
 
 
+double_digit = lambda x: f"0{x}" if x < 10 else f"{x}"
+
 def transform_locations(location: dict) -> dict:
     contact = {
         "type": "contact",
@@ -24,6 +26,9 @@ def transform_locations(location: dict) -> dict:
         "reported_date": round(time.time() * 1000)
     }
 
+    if "hhID" in location:
+        contact["hhID"] = location["hhID"]
+
     if "place_code" in location:
         contact["place_code"] = location["place_code"]
 
@@ -40,9 +45,24 @@ def transform_locations(location: dict) -> dict:
                                 "place_code": item["code"],
                                 "child": [
                                     {
-                                        "name": f"Ward {num}", 
+                                        "name": f"Ward {num.split(':')[0]}", 
                                         "type": "c50_ward", 
-                                        "place_code": f"{item['code']}{num}"
+                                        "place_code": f"{item['code']}-{num.split(':')[0]}-{num.split(':')[1]}",
+                                        "child": [
+                                            {
+                                                "name": f"{item['code']}-{num.split(':')[0]}-{num.split(':')[1]}-{double_digit(i)} - Empty",
+                                                "type": "c80_household",
+                                                "place_code": f"{item['code']}-{num.split(':')[0]}-{num.split(':')[1]}-{double_digit(i)}",
+                                                "hhID": f"{item['code']}-{num.split(':')[0]}-{num.split(':')[1]}-{double_digit(i)}",
+                                                "interview_date": "1977-01-01",
+                                                "child": [
+                                                    {
+                                                        "name": f"Empty",
+                                                        "type": "c80_household_contact"
+                                                    }
+                                                ]
+                                            } for i in range(1, 2)
+                                        ]
                                     } for num in item["wards"]
                                 ]
                             }
