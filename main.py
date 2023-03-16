@@ -1,8 +1,9 @@
 from dotenv import load_dotenv
-from engine import run
 
 def main():
     load_dotenv()
+
+    from engine import run
     run()
 
 if __name__ == "__main__":

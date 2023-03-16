@@ -1,29 +1,18 @@
 {
     "type": "c10_center",
-    "name": "Kathmandu Valley",
+    "name": "Test",
     "child_type": "c30_district",
     "child": [
         {
-            "name": "Kathmandu",
+            "name": "Waling",
             "child_type": "c40_municipality",
             "child": [
                 {
-                    "name": "Budanilkantha",
-                    "code": "K-BU",
-                    "wards": ["07:C"]
-                },
-                {
-                    "name": "Dakshinkali",
-                    "code": "K-DA",
-                    "wards": ["01:C", "02:C"]
-                },
-                {
-                    "name": "Tokha",
-                    "code": "K-TO",
-                    "wards": ["09:T", "10:T"]
+                    "name": "Bhirkot",
+                    "code": "W-BR",
+                    "wards": ["01:C"]
                 }
             ]
         }
     ]
 }
-  

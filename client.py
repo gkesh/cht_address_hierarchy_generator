@@ -24,6 +24,7 @@ def parse(request):
         success_codes = [200, 201]
 
         if response.status_code not in success_codes:
+            print(response.json())
             return None
         
         return loads(response.text)
@@ -42,11 +43,11 @@ def credentialize(request):
 
 @parse
 @credentialize
-def post(data: dict, **kwargs) -> dict:
-    credentials = kwargs['credentials']
-    url = getenv("MEDIC_URL")
+def post(url: str, data: dict, **kwargs) -> dict:
+    credentials = kwargs["credentials"]
 
     if not credentials:
+        print("No credentials available")
         return None
 
     if data is None:

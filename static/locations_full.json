@@ -1,0 +1,75 @@
+{
+    "type": "c10_center",
+    "name": "Kathmandu Valley",
+    "child_type": "c30_district",
+    "child": [
+        {
+            "name": "Kathmandu",
+            "child_type": "c40_municipality",
+            "child": [
+                {
+                    "name": "Budanilkantha",
+                    "code": "K-BK",
+                    "wards": ["07:C"]
+                },
+                {
+                    "name": "Dakshinkali",
+                    "code": "K-DK",
+                    "wards": ["01:C", "02:C"]
+                },
+                {
+                    "name": "Nagarjun",
+                    "code": "K-NG",
+                    "wards": ["10:C"]
+                },
+                {
+                    "name": "Tokha",
+                    "code": "K-TK",
+                    "wards": ["09:T", "10:T"]
+                },
+                {
+                    "name": "Gokarneshwor",
+                    "code": "K-GK",
+                    "wards": ["06:C", "08:T", "09:T"]
+                },
+                {
+                    "name": "Kathmandu",
+                    "code": "K-KT",
+                    "wards": ["01:C", "03:T", "05:C", "07:T", "12:C", "14:T", "16:C", "17:C", "19:C", "20:T", "21:T", "24:T", "27:C", "28:C", "29:T", "31:T"]
+                }
+            ]
+        },
+        {
+            "name": "Lalitpur",
+            "child_type": "c40_municipality",
+            "child": [
+                {
+                    "name": "Lalitpur",
+                    "code": "L-LP",
+                    "wards": ["04:C", "09:C", "21:T", "22:C", "24:T", "25:T", "26:C", "28:C"]
+                },
+                {
+                    "name": "Godawari",
+                    "code": "L-GD",
+                    "wards": ["09:C", "12:T", "13:T", "14:T"]
+                },
+                {
+                    "name": "Mahalaxmi",
+                    "code": "L-ML",
+                    "wards": ["01:C", "06:C"]
+                }
+            ]
+        },
+        {
+            "name": "Bhaktapur",
+            "child_type": "c40_municipality",
+            "child": [
+                {
+                    "name": "Madhyapur",
+                    "code": "B-MD",
+                    "wards": ["01:T"]
+                }
+            ]
+        }
+    ]
+}
